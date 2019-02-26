@@ -1,0 +1,48 @@
+<!--<h1>
+  Listado de USUARIOS
+</h1>
+
+<app-crud-add></app-crud-add>
+
+<app-crud-list></app-crud-list>
+
+<app-crud-list></app-crud-list> -->
+
+<div>
+
+    <h2>Users List</h2>
+    <table>
+      <tr>
+        <td>Nombre:</td>
+        <td>
+            <input [appHighlight]="getBKColor(newNom)" type="text" [(ngModel)]="newNom"/>
+        </td>
+      </tr>
+      <tr>
+      <td>eMail:</td>
+        <td>
+            <input [appHighlight]="getBKColor(newEmail)" type="text" [(ngModel)]="newEmail"/>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td>
+            <input [appHighlight]="getBKColor(newPhone)" type="text" [(ngModel)]="newPhone"/>
+        </td>
+        <td>
+          <button (click)="limpiarDatos()">Limpiar datos</button>
+          <button *ngIf="newNom != ''" (click)="addUser(newNom,newEmail,newPhone)">Añadir</button>
+        </td>
+      </tr>
+      <br/>
+
+    </table>
+
+    <app-crud-list [users]="users" (selectUserChanged)="userSel=$event"></app-crud-list>
+
+    <br/>
+    <br/>
+
+    <app-crud-edit *ngIf = "userSel" [userIn]="userSel" (deleteEvent)="deleteFromChild($event)"></app-crud-edit>
+
+  </div>

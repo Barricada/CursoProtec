@@ -1,0 +1,18 @@
+<p class = "primer par" [class.negrita]="IsNegrita" appHighlight>
+  primer works!
+  Hola {{nombre}}
+</p>
+<p>Otro párrafo</p>
+<p appHighlight>Otro párrafo</p>
+<p>Otro paárrafo</p>
+
+<p>Aplicando la pipe exp: {{ numero | exp:exponente}}</p>
+
+<input type="text" value="{{nombre}}"/>
+<input appHighlight type="text" [(ngModel)]="nombre"/>
+<input appHighlight type="text" [value]="nombre"/>
+<button (click)="this.nombre = 'Luis'">Haz click</button>
+<button (click)="mimetodo($event)">Haz click</button>
+
+<img class="img1" appRotate step="10" src="assets/mario_run.png" width="200"/>
+ <!--<img rotate src="assets/FILTRO_TPU.png" width="300"/>-->

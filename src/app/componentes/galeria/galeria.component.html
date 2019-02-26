@@ -1,0 +1,20 @@
+
+<div>
+  <img [src]="imagenActual" [width] = "tamano">
+</div>
+
+<div>
+  <button (click)="prevImage()" [disabled]="indice <=0">Anterior</button>
+  <button (click)="nextImage()" [disabled]="indice >=images.length-1">Siguente</button>
+  <button (click)="aumentar()">Aumentar</button>
+  <button (click)="disminuir()">Disminuir</button>
+  <button (click)="play()" *ngIf="playing==false">Play</button>
+  <button (click)="stop()" *ngIf="playing==true">Stop</button>
+</div>
+
+<div>
+  <span (click)="prevPage()">Anterior</span>
+  <img (click)="selectImage(i+ini)" [src]="image" [class.selected]="i==indice"
+  *ngFor="let image of images | slice:ini:fin; let i=index" width="90">
+  <span (click)="nextPage()">Siguiente</span>
+</div>

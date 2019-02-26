@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Hola {{ title }}!
+  </h1>
+
+ <!-- <app-galeria></app-galeria> -->
+
+ <!-- <app-primer>Hola 2</app-primer>
+
+<app-otro><p>Componente 2</p></app-otro>-->
+
+</div>
+
+<app-loggin *ngIf="!isLogged()"></app-loggin>
+<app-logged *ngIf="isLogged()"></app-logged>
+
+<ul>
+  <li><a routerLink="/primer">Primer Componente</a></li>
+  <li><a routerLink="/galeria">Galería</a></li>
+  <li><a routerLink="/crud2">Crud Usuarios</a></li>
+  <li><a routerLink="/forms1">Formulario</a></li>
+</ul>
+
+
+ <router-outlet></router-outlet>

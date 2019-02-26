@@ -1,0 +1,76 @@
+<div>
+
+  <h2>Users List</h2>
+  <table>
+    <tr>
+      <td>Nombre:</td>
+      <td>
+          <input [appHighlight]="getBKColor(newNom)" type="text" [(ngModel)]="newNom"/>
+      </td>
+    </tr>
+    <tr>
+    <td>eMail:</td>
+      <td>
+          <input [appHighlight]="getBKColor(newEmail)" type="text" [(ngModel)]="newEmail"/>
+      </td>
+    </tr>
+    <tr>
+      <td>Phone:</td>
+      <td>
+          <input [appHighlight]="getBKColor(newPhone)" type="text" [(ngModel)]="newPhone"/>
+      </td>
+      <td>
+        <button (click)="limpiarDatos()">Limpiar datos</button>
+        <button *ngIf="newNom != ''" (click)="addUser(newNom,newEmail,newPhone)">Añadir</button>
+      </td>
+    </tr>
+    <br/>
+
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>eMail</td>
+        <td>Teléfono</td>
+      </tr>
+    </thead>
+    <tr appHighlight="yellow"
+    (mouseenter)="xVisible(i)"
+    (mouseleave)="resetShowX()"
+    *ngFor="let user of users; let i=index"
+    (click)="selectItem(i)"
+    [class.selected]="i==indexSel">
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+      <td><button (click)="deleteUser(i)" *ngIf="showX == i">X</button></td>
+    </tr>
+  </table>
+  <br/>
+  <br/>
+  <table *ngIf = "userSel">
+      <tr>
+        <td>Nombre:</td>
+        <td>
+            <input appHighlight type="text" [(ngModel)]="userSel.username"/>
+        </td>
+      </tr>
+      <tr>
+      <td>eMail:</td>
+        <td>
+            <input appHighlight type="text" [(ngModel)]="userSel.email"/>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td>
+            <input appHighlight type="text" [(ngModel)]="userSel.phone"/>
+        </td>
+      </tr>
+      <br/>
+    </table>
+</div>

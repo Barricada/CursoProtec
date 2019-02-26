@@ -1,0 +1,22 @@
+<div>
+  Búsqueda por eMail<input #search>
+</div>
+
+<table>
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>eMail</td>
+        <td>Teléfono</td>
+      </tr>
+    </thead>
+    <tr appHighlight="yellow"
+     *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+      <td><button >X</button></td>
+    </tr>
+  </table>

@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>eMail</td>
+        <td>Teléfono</td>
+      </tr>
+    </thead>
+    <tr appHighlight="yellow"
+    (mouseenter)="xVisible(i)"
+    (mouseleave)="resetShowX()"
+    *ngFor="let user of users; let i=index"
+    (click)="selectItem(i)"
+    [class.selected]="i==indexSel">
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+      <td><button (click)="deleteUser(i)" *ngIf="showX == i">X</button></td>
+    </tr>
+  </table>

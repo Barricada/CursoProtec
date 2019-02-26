@@ -1,0 +1,10 @@
+
+<input #box
+(keyup)="0"
+(keyup.enter)="add(box.value); box.value='' "
+(blur)="add(box.value); box.value='' ">
+
+<button [disabled]="box.value==''" (click)="add(box.value); box.value = ''">Añadir</button>
+
+<ul><li *ngFor="let hero of heroes">{{hero}}</li></ul>
+

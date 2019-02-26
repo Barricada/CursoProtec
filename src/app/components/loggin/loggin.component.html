@@ -1,0 +1,7 @@
+<div>
+  <input type="text" [(ngModel)]="user" placeholder="user name"><br/>
+  <input type="password" [(ngModel)]="pwd" placeholder="password"><br/>
+  <p style="color: red" *ngIf="nTryActual > 0 && nTryActual < nMaxTries">Datos de usuario incorrectos: te quedan {{nMaxTries-nTryActual}} intentos</p>
+  <p *ngIf="nTryActual == nMaxTries">no te quedan intentos. Espere {{this.timeOut}} segundos</p>
+  <button *ngIf="nTryActual < nMaxTries" (click)="login()" [disabled]="user==''||pwd==''">Login</button>
+</div>

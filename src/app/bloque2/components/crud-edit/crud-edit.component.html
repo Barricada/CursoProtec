@@ -1,0 +1,22 @@
+<table *ngIf = "user">
+    <tr>
+      <td>Nombre:</td>
+      <td>
+          <input appHighlight type="text" [(ngModel)]="user.username"/>
+      </td>
+    </tr>
+    <tr>
+    <td>eMail:</td>
+      <td>
+          <input appHighlight type="text" [(ngModel)]="user.email"/>
+      </td>
+    </tr>
+    <tr>
+      <td>Phone:</td>
+      <td>
+          <input appHighlight type="text" [(ngModel)]="user.phone"/>
+      </td>
+    </tr>
+    <br/>
+  </table>
+  <button (click)="delete()">Eliminar</button>
